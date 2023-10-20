@@ -1,6 +1,10 @@
 FROM python:3.11-alpine
 LABEL maintainer="ysahu.dev"
 
+# Set env vars
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
 # Install dependencies
 RUN apk update \
     && apk add postgresql-dev gcc build-base musl-dev
